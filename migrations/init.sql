@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS questions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    body TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS options (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    question_id INTEGER,
+    body TEXT NOT NULL,
+    correct BOOLEAN NOT NULL,
+    FOREIGN KEY (question_id) REFERENCES questions(id)
+);
